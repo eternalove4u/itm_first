@@ -15,7 +15,7 @@ var (
 		"path to input file",
 	)
 	outputPathPtr = flag.String("output",
-		"cmd/data/output.txt",
+		"internal/repository/data/output.txt",
 		"path to output file",
 	)
 )
