@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"itm_first/internal/app/service"
-	"itm_first/internal/pkg/presenter"
-	"itm_first/internal/pkg/producer"
+	"itm_first/internal/port"
+	"itm_first/internal/usecase/presenter"
+	"itm_first/internal/usecase/producer"
 	"os"
 )
 
@@ -29,7 +29,7 @@ func main() {
 
 	prod := producer.NewFileProducer(*inputPathPtr)
 	pres := presenter.NewFilePresenter(*outputPathPtr)
-	s := service.NewService(prod, pres)
+	s := port.NewService(prod, pres)
 
 	if err := s.Run(); err != nil {
 		fmt.Errorf("%v\n", err)

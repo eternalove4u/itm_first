@@ -1,4 +1,4 @@
-package service
+package port
 
 type Service struct {
 	prod producer
@@ -6,6 +6,9 @@ type Service struct {
 }
 
 func NewService(prod producer, pres presenter) *Service {
+	if prod == nil || pres == nil {
+		return nil
+	}
 	return &Service{prod: prod, pres: pres}
 }
 

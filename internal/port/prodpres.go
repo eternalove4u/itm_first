@@ -1,4 +1,4 @@
-package service
+package port
 
 type producer interface {
 	Produce() ([]string, error)

@@ -1,2 +1,2 @@
-cmd/data/*txt
+internal/repository/data/*txt
 .idea/
