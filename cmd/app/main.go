@@ -49,6 +49,6 @@ func main() {
 	}
 
 	if err := s.Run(); err != nil {
-		panic(fmt.Errorf("%v\n", err))
+		panic(fmt.Errorf("service run: %w", err))
 	}
 }
