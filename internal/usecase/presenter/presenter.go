@@ -10,6 +10,9 @@ type FilePresenter struct {
 }
 
 func NewFilePresenter(pathToFile string) *FilePresenter {
+	if pathToFile == "" {
+		return nil
+	}
 	return &FilePresenter{pathToFile}
 }
 

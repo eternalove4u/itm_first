@@ -10,6 +10,9 @@ type FileProducer struct {
 }
 
 func NewFileProducer(pathToFile string) *FileProducer {
+	if pathToFile == "" {
+		return nil
+	}
 	return &FileProducer{pathToFile}
 }
 
