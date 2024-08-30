@@ -2,6 +2,7 @@ package presenter
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -9,11 +10,11 @@ type FilePresenter struct {
 	pathToFile string
 }
 
-func NewFilePresenter(pathToFile string) *FilePresenter {
+func NewFilePresenter(pathToFile string) (*FilePresenter, error) {
 	if pathToFile == "" {
-		return nil
+		return nil, fmt.Errorf("empty file path")
 	}
-	return &FilePresenter{pathToFile}
+	return &FilePresenter{pathToFile}, nil
 }
 
 func (fp *FilePresenter) Present(messages []string) error {
